@@ -1,13 +1,15 @@
+import java.util.ArrayList;
+
 public class Array2DAlgorithmTester
 {
     public static void main(String[] args)
     {
-        int[][] testArr4 = {{1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}, {4, 6, 8, 3, 5}};
-        System.out.println(Algorithm2DArrays.sumForColumn(testArr4, 0));
-        System.out.println(Algorithm2DArrays.sumForColumn(testArr4, 1));
-        System.out.println(Algorithm2DArrays.sumForColumn(testArr4, 2));
-        System.out.println(Algorithm2DArrays.sumForColumn(testArr4, 3));
-        System.out.println(Algorithm2DArrays.sumForColumn(testArr4, 4));
+        String[][] words2 = {{"hi", "bye", "stuff", "goo"}, {"time", "up", "you", "good"}, {"map", "low", "bow", "mom"}};
+        ArrayList<String> returnedList = Algorithm2DArrays.findStringsOfLength(words2, 3);
+        System.out.println(returnedList);
+        ArrayList<String> returnedList2 = Algorithm2DArrays.findStringsOfLength(words2, 4);
+        System.out.println(returnedList2);
+        ArrayList<String> returnedList3 = Algorithm2DArrays.findStringsOfLength(words2, 6);
+        System.out.println(returnedList3);
     }
 }
-

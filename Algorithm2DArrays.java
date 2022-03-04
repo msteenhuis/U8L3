@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Algorithm2DArrays
 {
     /** Return true if target is found at least once in arr; false otherwise.
@@ -97,4 +99,97 @@ public class Algorithm2DArrays
         }
         return sum;
     }
+
+    /** Creates a 2D array of ints of size n x m, where n is number of rows and
+     *  m is number of columns; the elements in the 2D array should be numbered 0
+     *  through n x m - 1, with the numbers filled top to bottom, left to right.
+     *  The method prints the 2D array "grid" of numbers, then finally returns
+     *  the 2D array.
+     *
+     *  For example, for rows = 3 and cols = 4, this method should print
+     *  (and return):
+     *  0 1 2 3
+     *  4 5 6 7
+     *  8 9 10 11
+     *
+     *  Each element can be printed with a single space in between (no need to
+     *  make it "look nice" unless you want to).
+     *
+     *  @param rows  number of rows
+     *  @param cols  number of columns
+     *  @return  the same 2D array "number grid" that gets printed by the method
+     */
+    public static int[][] printNumberGrid(int rows, int cols)
+    {
+        int counter = 0;
+        int[][] outArr = new int[rows][cols];
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                outArr[r][c] = counter;
+                counter++;
+            }
+        }
+        return outArr;
+    }
+
+    /** Creates and returns a square 2D array of Strings of size n x n; the
+     *  elements in the 2D array alternate between "X" and "O" (letter),
+     *  starting with "X"
+     *
+     *  For example, if n = 5, this method should return the following 2D array
+     *  (with 5 rows and 5 columns):
+     *  X O X O X
+     *  O X O X O
+     *  X O X O X
+     *  O X O X O
+     *  X O X O X
+     *
+     *  @param n  number of rows and columns (creating a square 2D array of size n x n)
+     *  @return  a 2D array of Strings that alternate between "X" and "O"
+     */
+    public static String[][] gridOfXandO(int n)
+    {
+        int counter = 0;
+        String[][] outArr = new String[n][n];
+        for (int r = 0; r < n; r++) {
+            for (int c = 0; c < n; c++) {
+                if (counter % 2 != 1)
+                {
+                    outArr[r][c] = "X";
+                }
+                else
+                {
+                    outArr[r][c] = "O";
+                }
+                counter++;
+            }
+        }
+        return outArr;
+    }
+
+    /** Searches through the 2D array wordChart and finds all strings with
+     *  length len; these strings are added to an ArrayList and returned.
+     *  If no strings have that length, return an empty ArrayList
+     *
+     *  @param wordChart 2D array of Strings
+     *  @parram len  the length of strings to search for
+     *  @return  an ArrayList containing all strings in wordChart with length len
+     */
+    public static ArrayList<String> findStringsOfLength(String[][] wordChart, int len)
+    {
+        ArrayList<String> outArr = new ArrayList<String>();
+        for (String[] r : wordChart)
+        {
+            for (String c : r)
+            {
+                if (c.length() == len)
+                {
+                    outArr.add(c);
+                }
+            }
+        }
+        return outArr;
+    }
 }
+
+
